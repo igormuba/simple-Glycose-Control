@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap'
+import { Card } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 class DiarioControle extends Component {
   render() {
@@ -16,12 +17,15 @@ class DiarioControle extends Component {
     return (
       <div>
         <>
-          <Card className="text-center" bg="primary" text="white" style={{ height: "10em" }} >
-            <Card.Body style={styleCenter}>
-              <Card.Title >Dados Cadastrais</Card.Title>
+          <Link to="/dadoscadastrais">
+            <Card className="text-center" bg="primary" text="white" style={{ height: "10em" }} >
+              <Card.Body style={styleCenter}>
+                <Card.Title >Dados Cadastrais</Card.Title>
 
-            </Card.Body>
-          </Card>
+              </Card.Body>
+            </Card>
+          </Link>
+
 
 
           <Card className="text-center" bg="secondary" text="white" style={{ height: "10em" }}>
