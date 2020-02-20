@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { Card, Form } from 'react-bootstrap';
+import { Card, Form, Row, Col } from 'react-bootstrap';
 import DatePicker from "react-datepicker";
+import { registerLocale, setDefaultLocale } from "react-datepicker";
+import br from 'date-fns/locale/pt-BR';
 import "react-datepicker/dist/react-datepicker.css";
+
+registerLocale('br', br);
+setDefaultLocale('br');
+
 
 class DadosCadastrais extends Component {
 
@@ -32,7 +38,11 @@ class DadosCadastrais extends Component {
       top: "50%"
     }
 
-
+    function calculateAge(birthday) {
+      var ageDifMs = Date.now() - birthday;
+      var ageDate = new Date(ageDifMs);
+      return Math.abs(ageDate.getUTCFullYear() - 1970);
+    }
 
     return (
       <div>
@@ -51,10 +61,21 @@ class DadosCadastrais extends Component {
         <Card className="text-center" bg="secondary" text="white" style={{ height: "10em" }}>
           <Card.Body style={styleCenter}>
             <Card.Title >Data de Aniversário</Card.Title>
-            <DatePicker
-              selected={this.state.startDate}
-              onChange={this.handleChange}
-            />
+            <Row>
+              <Col>
+                <DatePicker
+                  dateFormat='P'
+                  selected={this.state.startDate}
+                  onChange={this.handleChange}
+                  onKeyUp={this.handleChange}
+                  showYearDropdown
+                />
+              </Col>
+              <Col>
+                {calculateAge(this.state.startDate)} Anos
+              </Col>
+            </Row>
+
           </Card.Body>
         </Card>
       </div>
