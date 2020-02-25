@@ -58,12 +58,15 @@ class DadosCadastrais extends Component {
           </Card.Body>
         </Card>
 
-        <Card className="text-center" bg="secondary" text="white" style={{ height: "10em" }}>
+        <Card className="text-center" bg="secondary" text="white"  style={{ height: "10em" }}>
           <Card.Body style={styleCenter}>
             <Card.Title >Data de Aniversário</Card.Title>
             <Row>
               <Col>
                 <DatePicker
+                style={{
+                  "z-index":"9999 !important"
+                }}
                   dateFormat='P'
                   selected={this.state.startDate}
                   onChange={this.handleChange}
@@ -76,6 +79,17 @@ class DadosCadastrais extends Component {
               </Col>
             </Row>
 
+          </Card.Body>
+        </Card>
+
+        <Card className="text-center" bg="warning" text="white" style={{ height: "10em" }}>
+          <Card.Body style={styleCenter}>
+            <Card.Title >Duração da adohbsudgha</Card.Title>
+            <Card.Text>
+              <Form.Group >
+                <Form.Control onKeyUp={(e) => { console.log(e.target.value) }} placeholder="Duração" />
+              </Form.Group>
+            </Card.Text>
           </Card.Body>
         </Card>
       </div>
