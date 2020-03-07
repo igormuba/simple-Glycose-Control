@@ -20,7 +20,7 @@ import {
 function App() {
   return (
     <Router>
-      <NavigationBar />
+      <NavigationBar/>
       <Switch>
         <Route exact path="/" component={InformarGlicemia} />
         <Route exact path="/diariocontrole" component={DiarioControle} />
