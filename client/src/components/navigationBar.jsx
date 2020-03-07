@@ -6,7 +6,7 @@ class NavigationBar extends Component {
   render() {
     return (
       <>
-        <Navbar bg="dark" variant="dark">
+        <Navbar variant="dark" bg="dark">
           <Navbar.Brand href="#home">SGC</Navbar.Brand>
           <Nav className="mr-auto">
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, Button, Container, Form } from 'react-bootstrap'
+import { bg } from 'date-fns/locale';
 
 class InformarGlicemia extends Component {
   render() {
